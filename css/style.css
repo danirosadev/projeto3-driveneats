@@ -39,12 +39,11 @@ h1, h2 {
 
 .cardapio {
     margin-top: 117px;
-    margin-bottom: 69px;
+    margin-bottom: 99px;
 }
 
 .cardapio h2 {
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin: 25px auto 10px 10px;
 }
 
 .item {
@@ -61,8 +60,6 @@ h1, h2 {
     justify-content: space-evenly;
 
     position: relative;
-
-    border: 5px solid #32B72F;
     box-sizing: content-box;
 }
 
@@ -104,12 +101,12 @@ h1, h2 {
 
 .comidas {
     display: flex;
-    overflow-x: scroll;
+    overflow: scroll hidden;
 }
 
 .bebidas {
     display: flex;
-    overflow-x: scroll;
+    overflow: scroll hidden;
 }
 
 .bebidas div {
@@ -118,7 +115,7 @@ h1, h2 {
 
 .sobremesas {
     display: flex;
-    overflow-x: scroll;
+    overflow: scroll hidden;
 }
 
 .sobremesas div {
@@ -138,6 +135,8 @@ button {
     margin-top: 15px;
 }
 
+
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -149,4 +148,12 @@ button {
 
 .oculto {
     display: none;
+}
+
+.selecionado {
+    border: 5px solid #32B72F;
+}
+
+.botao-ativo {
+    background-color: #32B72F;
 }
