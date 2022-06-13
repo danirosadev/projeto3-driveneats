@@ -61,9 +61,9 @@ function zapZap(){
     bebidaSelecionada = document.querySelector('.selecionado .nome-bebida').innerHTML;
     sobremesaSelecionada = document.querySelector('.selecionado .nome-sobremesa').innerHTML;
 
-    let valorPrato = parseInt(document.querySelector('.selecionado .valor-prato').innerHTML);
-    let valorBebida = parseInt(document.querySelector('.selecionado .valor-bebida').innerHTML);
-    let valorSobremesa = parseInt(document.querySelector('.selecionado .valor-sobremesa').innerHTML);
+    let valorPrato = parseFloat(document.querySelector('.selecionado .valor-prato').innerHTML);
+    let valorBebida = parseFloat(document.querySelector('.selecionado .valor-bebida').innerHTML);
+    let valorSobremesa = parseFloat(document.querySelector('.selecionado .valor-sobremesa').innerHTML);
 
     let valorTotal = valorPrato + valorBebida + valorSobremesa;
 
