@@ -64,18 +64,14 @@ h1, h2 {
 }
 
 .item ion-icon {
-    color: #32B72F;
-    position: absolute;
-    font-size: 19px;
-    bottom: 10px;
-    right: 10px;
+    display: none;
 }
 
 .item p {
     margin-left: 9px;
 }
 
-.item :nth-child(2) {
+.item .nome-prato {
     font-size: 16px;
     font-weight: bold;
     
@@ -88,9 +84,13 @@ h1, h2 {
    
 }
 
-.item :nth-child(4) {
+.valor {
+    display: flex;
+}
+
+.valor p {
     font-size: 16px;
-   
+    font-weight: regular;
 }
 
 .cardapio img {
@@ -146,13 +146,19 @@ button {
     height: 92px;
 }
 
-.oculto {
-    display: none;
-}
-
 .selecionado {
     border: 5px solid #32B72F;
 }
+
+.selecionado ion-icon {
+    display: inherit;
+    color: #32B72F;
+    position: absolute;
+    font-size: 19px;
+    bottom: 10px;
+    right: 10px;
+}
+
 
 .botao-ativo {
     background-color: #32B72F;

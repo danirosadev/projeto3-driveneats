@@ -4,14 +4,16 @@ let sobremesaSelecionada;
 
 function selecionarPrato(elemento){
     pratoSelecionado = elemento.innerHTML;
-
+    
     let item = document.querySelector('.selecionado');
     if (item !== null) {
         item.classList.remove('selecionado');
     }
     
     elemento.classList.add('selecionado');
-    fazerPedido()
+    
+    fazerPedido();
+    
 }
 
 
@@ -40,21 +42,36 @@ function selecionarSobremesa(elemento){
     fazerPedido()
 }
 
-/*function mostrarIcon () {
-    
-    let itemSelecionado = document.querySelector('.oculto');
-    itemSelecionado.classList.remove('oculto');
-}*/
-let linkPedido = `https://wa.me/5541992748121?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20pedido%3A-%20Prato%3A${pratoSelecionado}-%20Bebida%3A%20${bebidaSelecionada}-%20Sobremesa%3A%20${sobremesaSelecionada}Total: R$ 27.70`
-
 function fazerPedido() {
-   
+    
     let botao = document.querySelector('button');
     if (pratoSelecionado && bebidaSelecionada && sobremesaSelecionada){
         botao.classList.add('botao-ativo');
         botao.innerHTML = "Fechar Pedido"
+        botao.disabled = false;
+
     } else {
         botao.disabled = true;
-        botao.link(linkPedido);
     }
+   
+}
+
+function zapZap(){
+    pratoSelecionado = document.querySelector('.selecionado .nome-prato').innerHTML;
+    bebidaSelecionada = document.querySelector('.selecionado .nome-bebida').innerHTML;
+    sobremesaSelecionada = document.querySelector('.selecionado .nome-sobremesa').innerHTML;
+
+    let valorPrato = parseInt(document.querySelector('.selecionado .valor-prato').innerHTML);
+    let valorBebida = parseInt(document.querySelector('.selecionado .valor-bebida').innerHTML);
+    let valorSobremesa = parseInt(document.querySelector('.selecionado .valor-sobremesa').innerHTML);
+
+    let valorTotal = valorPrato + valorBebida + valorSobremesa;
+
+    let mensagemZap = `Olá, gostaria de fazer o pedido:
+    - Prato: ${pratoSelecionado}
+    - Bebida: ${bebidaSelecionada}
+    - Sobremesa: ${sobremesaSelecionada}
+    Total: ${valorTotal.toFixed(2)}`
+
+    window.location.href =  "https://wa.me/5541992748121?text=" + encodeURIComponent(mensagemZap);
 }
